@@ -8,7 +8,7 @@ def task1(x: [float, int], y: [float, int]) -> int:
     """
 
 
-def task2(a: [float, int]) -> tuple[int, int]:
+def task2(a: [float, int]) -> tuple[[float, int], [float, int]]:
     """
     Дана длина ребра куба.
     Вернуть кортеж с объемом куба и площадью его боковой поверхности.
