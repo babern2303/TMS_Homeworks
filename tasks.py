@@ -1,3 +1,5 @@
+from cmath import sqrt
+
 from exceptions import TaskException
 
 
@@ -8,11 +10,19 @@ def task1(x: [float, int], y: [float, int]) -> [float, int]:
     """
 
 
+    return ((abs(x) - abs(y)) / (1 + abs(x*y)))
+
 def task2(a: [float, int]) -> tuple[[float, int], [float, int]]:
     """
     Дана длина ребра куба.
     Вернуть кортеж с объемом куба и площадью его боковой поверхности.
     """
+
+    if a < 0:
+        raise TaskException
+    return a**3, 4 * a ** 2
+
+
 
 
 def task3(a: [float, int], b: [float, int]) -> [float, int]:
@@ -21,6 +31,7 @@ def task3(a: [float, int], b: [float, int]) -> [float, int]:
     Вернуть длину гипотенузы.
     """
 
+    return sqrt(a ** 2 + b ** 2)
 
 def task4(string: str) -> str:
     """
@@ -28,12 +39,16 @@ def task4(string: str) -> str:
     Вернуть строку равную предпоследнему символу введенной строки.
     """
 
+    return string[-2]
 
 def task5(string: str) -> str:
+
+
     """
     На вход подаётся строка.
     Вернуть строку равную первым пяти символам введенной строки.
     """
+    return string[:5]
 
 
 def task6(string: str) -> str:
@@ -41,6 +56,7 @@ def task6(string: str) -> str:
     На вход подаётся строка.
     Вернуть строку равную введенной строку без последних двух символов.
     """
+    return string[:-2]
 
 
 def task7(string: str) -> str:
